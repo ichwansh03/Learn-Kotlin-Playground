@@ -1,4 +1,4 @@
-package abstracts
+package classes
 
 interface User {
     fun validate()
@@ -6,6 +6,11 @@ interface User {
 }
 
 class Child(override val age: Int) : User {
+
+    init {
+        println("inisialisasi class")
+    }
+
     override fun validate() {
         if (age > 18) println("adult")
         else println("child")
