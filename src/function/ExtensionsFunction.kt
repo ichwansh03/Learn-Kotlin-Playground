@@ -1,19 +1,22 @@
 package function
 
 /***
- * menambahkan function pada tipe data yg sudah ada
+ * menambahkan function/properties pada tipe data/class yg sudah ada
  */
+
+val name: String
+    get() = "Extensions Properties"
 
 fun String.loading(): String {
     return "Data Loading"
 }
 
-fun String.error(): String {
-    return "Data Error"
+fun String.error(code: Int): String {
+    return "Data Error | Status: $code"
 }
 
-fun String.success(): String {
-    return "Data Success"
+fun String.success(code: Int): String {
+    return "Data Success | Status: $code"
 }
 
 fun main() {
@@ -21,7 +24,9 @@ fun main() {
 
     when(login){
         "loading" -> println(login.loading())
-        "error" -> println(login.error())
-        "success" -> println(login.success())
+        "error" -> println(login.error(400))
+        "success" -> println(login.success(200))
     }
+
+    println(name)
 }

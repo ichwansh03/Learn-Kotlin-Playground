@@ -5,8 +5,11 @@ package function
  * langsung include pada variable, array dll
  */
 
+//typealias untuk function
+typealias RequestData = (Int, String) -> String
+
 fun main() {
-    val requestCode: (Int, String) -> String = {resultHttp: Int, message: String ->
+    val requestCode: RequestData = {resultHttp: Int, message: String ->
         val result = "{result: $resultHttp, message: $message}"
         result
     }
@@ -14,7 +17,7 @@ fun main() {
     val result = requestCode(200,"Success")
     println(result)
 
-    //hanya jalan jika 1 parameter
+    //it hanya jalan jika 1 parameter
     val name: (String) -> String = {
         "hello $it"
     }
