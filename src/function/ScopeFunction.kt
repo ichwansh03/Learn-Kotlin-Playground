@@ -1,4 +1,4 @@
-package controlflow
+package function
 
 fun main() {
     //return value based on different expression inside lambda
